@@ -1,8 +1,8 @@
 # kirby-plr-diagnostic-debugger
 
-*This skill is part of the [Kirby Skills Collection](https://github.com/markkirby125/kirby-skills-collection).*
+*This skill is part of the [Tiffany Lambert PLR Skills Collection](https://github.com/markkirby125/kirby-skills-tiff-collection).*
 
-Executes a 15-point diagnostic audit and surgical repair suite on rewritten or personalized PLR content to eliminate tone drift, forced storytelling, corporate stiffness, and lingering AI/PLR slop.
+Executes a 15-point diagnostic audit and surgical repair suite on rewritten or personalised PLR content to eliminate tone drift, forced storytelling, corporate stiffness, and lingering AI/PLR slop.
 
 ## 🪄 The Magic Prompt
 
@@ -24,6 +24,5 @@ Copy and paste this directly to your AI (Cursor, Windsurf, Claude Code, Antigrav
 
 ## Tech Stack
 
-- **Format**: Markdown / Heuristic Audit
-- **Architecture**: Tier 1/2 Single File Specification
+- **Format**: Markdown / 15-Point Quality Assurance SOP
 - **Compatibility**: Antigravity, Claude Code, Cursor, Windsurf, Cline
