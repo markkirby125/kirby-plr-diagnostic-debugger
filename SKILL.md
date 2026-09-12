@@ -11,46 +11,7 @@ triggers: [audit-plr, fix-plr-tone, check-plr-slop, debug-plr-rewrite, de-generi
 
 ---
 
-## 1. The Quality Gate Philosophy
-
-Rewriting PLR with AI is not guaranteed to produce gold on the first pass. AI models frequently fall victim to predictable cognitive failure modes:
-1. **The "Bolted-On" Story:** A personal anecdote is dumped in the middle of a paragraph with zero organic bridge to the lesson.
-2. **Corporate Bleed:** Academic, high-friction vocabulary creeps back in (*"Consequently, utilizing optimal frameworks..."*).
-3. **Tone Drift:** Starting with conversational swagger in paragraph 1, then reverting to Wikipedia-style textbook prose by paragraph 4.
-
-This skill serves as the **Surgical Quality Gate**. It inspects candidate copy across 4 diagnostic clusters and applies targeted micro-repair prompts.
-
-```
-┌─────────────────────────────────────────────────────────┐
-│                 Candidate Content Draft                 │
-└────────────────────────────┬────────────────────────────┘
-                             │
-                             ▼
-┌─────────────────────────────────────────────────────────┐
-│              15-Point Diagnostic Matrix                 │
-├──────────────────────────┬──────────────────────────────┤
-│ Cluster 1: Tone & Voice  │ Cluster 2: Story Integration │
-│ (5 Checks)               │ (5 Checks)                   │
-├──────────────────────────┼──────────────────────────────┤
-│ Cluster 3: Audience Fit  │ Cluster 4: Authentic UVP     │
-│ (3 Checks)               │ (2 Checks)                   │
-└──────────────────────────┴──────────────────────────────┘
-                             │
-                             ▼
-┌─────────────────────────────────────────────────────────┐
-│                 Surgical Repair Engine                  │
-│        (Runs targeted single-defect patch prompts)      │
-└────────────────────────────┬────────────────────────────┘
-                             │
-                             ▼
-┌─────────────────────────────────────────────────────────┐
-│               Certified Authentic Asset                 │
-└─────────────────────────────────────────────────────────┘
-```
-
----
-
-## 2. The 15-Point Diagnostic Breakdown & Repair Protocols
+## 1. The 15-Point Diagnostic Breakdown & Repair Protocols
 
 ### Cluster 1: Tone & Voice Correction
 
@@ -128,23 +89,17 @@ This skill serves as the **Surgical Quality Gate**. It inspects candidate copy a
 
 ---
 
-## 3. Surgical Diagnostic Audit Prompt
+## 2. Surgical Diagnostic Audit Execution
 
-```markdown
-You are a ruthless editorial surgeon and anti-slop quality inspector.
-Audit the draft text below against the 15-Point PLR Diagnostic Suite.
+Execute the diagnostic audit using the following directives:
 
-### CANDIDATE DRAFT:
-"""
-{{INSERT_DRAFT_TEXT}}
-"""
+**Inputs Required:**
+1. **CANDIDATE DRAFT:** {{INSERT_DRAFT_TEXT}}
+2. **TARGET AUDIENCE:** {{TARGET_AUDIENCE}}
+3. **DESIRED AUTHOR VOICE:** {{VOICE_PROFILE}}
 
-TARGET AUDIENCE: {{TARGET_AUDIENCE}}
-DESIRED AUTHOR VOICE: {{VOICE_PROFILE}}
-
-### AUDIT INSTRUCTIONS:
+**Audit Instructions:**
 1. Scan for the 15 defect classes across the 4 clusters.
 2. Flag every detected defect with an exact quote and line location.
 3. For each flagged defect, provide the immediate surgical rewrite that fixes the problem without expanding fluff.
 4. Output the final, clean, production-certified version.
-```
