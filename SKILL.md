@@ -1,13 +1,15 @@
 ---
 name: kirby-plr-diagnostic-debugger
-description: "Executes a 15-point diagnostic audit and surgical repair suite on rewritten or personalized PLR content to eliminate tone drift, forced storytelling, and lingering AI/PLR slop."
+description: "Use when auditing or surgically repairing rewritten PLR for tone drift, forced stories, or residual PLR slop."
 category: quality
-triggers: [audit-plr, fix-plr-tone, check-plr-slop, debug-plr-rewrite, de-genericize-content, content-doctor, tone-debugger]
+triggers: [audit-plr, fix-plr-tone, check-plr-slop, debug-plr-rewrite, content-doctor, tone-debugger]
 ---
 
 # SOP: 15-Point PLR Diagnostic & Surgical Debugging Suite
 
 > Standard Operating Procedure for auditing, diagnosing, and repairing flawed or partially personalized PLR content. Uses a strict 15-point heuristic to identify and eliminate synthetic tone, forced anecdotes, and residual PLR stench.
+
+**Related:** Rewrites from raw PLR are `kirby-plr-personalizer`. Voice/audience/story files are `voice_dna.yaml`, `audience_profile.yaml`, `storyline_bank.json`. Do not use `de-genericize` here — that trigger belongs to the personalizer.
 
 ---
 
@@ -95,11 +97,13 @@ Execute the diagnostic audit using the following directives:
 
 **Inputs Required:**
 1. **CANDIDATE DRAFT:** {{INSERT_DRAFT_TEXT}}
-2. **TARGET AUDIENCE:** {{TARGET_AUDIENCE}}
-3. **DESIRED AUTHOR VOICE:** {{VOICE_PROFILE}}
+2. **AUDIENCE:** `audience_profile.yaml` (run `kirby-audience-intel-profiler` if missing)
+3. **VOICE:** `voice_dna.yaml` (run `kirby-voice-dna-extractor` if missing)
+4. **STORIES:** `storyline_bank.json` (run `kirby-storyline-bank` if a story swap is needed)
 
 **Audit Instructions:**
 1. Scan for the 15 defect classes across the 4 clusters.
 2. Flag every detected defect with an exact quote and line location.
 3. For each flagged defect, provide the immediate surgical rewrite that fixes the problem without expanding fluff.
 4. Output the final, clean, production-certified version.
+5. Confirm `audience_profile.yaml` and `voice_dna.yaml` were loaded before certifying.
