@@ -3,6 +3,9 @@ name: kirby-plr-diagnostic-debugger
 description: "Use when auditing or surgically repairing rewritten PLR for tone drift, forced stories, or residual PLR slop."
 category: quality
 triggers: [audit-plr, fix-plr-tone, check-plr-slop, debug-plr-rewrite, content-doctor, tone-debugger]
+risk: unverified
+author: william-fitzpatrick
+tags: [kirby, ai-agent, workflow]
 ---
 
 # SOP: 15-Point PLR Diagnostic & Surgical Debugging Suite
@@ -107,3 +110,14 @@ Execute the diagnostic audit using the following directives:
 3. For each flagged defect, provide the immediate surgical rewrite that fixes the problem without expanding fluff.
 4. Output the final, clean, production-certified version.
 5. Confirm `audience_profile.yaml` and `voice_dna.yaml` were loaded before certifying.
+
+
+## Examples
+
+*(Add specific conversational examples here showing how the agent should behave.)*
+
+
+## Limitations (When NOT to Use)
+
+- Do not use this skill outside of its intended scope.
+- Stop and ask the user for clarification if the requirements are ambiguous.
